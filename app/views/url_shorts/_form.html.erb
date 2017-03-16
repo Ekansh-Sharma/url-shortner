@@ -1,0 +1,21 @@
+<%= form_for(@url_short) do |f| %>
+  <% if @url_short.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@url_short.errors.count, "error") %> prohibited this url_short from being saved:</h2>
+
+      <ul>
+      <% @url_short.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :original_url %><br>
+    <%= f.text_field :original_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
